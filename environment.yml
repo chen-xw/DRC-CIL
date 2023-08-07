@@ -1,0 +1,11 @@
+name: MAFDRC-test
+channels:
+  - anaconda
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9.7
+  - pip
+  - pip:
+      - --find-links https://download.pytorch.org/whl/torch_stable.html
+      - --requirement requirements.txt
