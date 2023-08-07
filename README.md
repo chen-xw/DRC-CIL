@@ -1,5 +1,5 @@
 
-# MAFDRC
+# Dynamic Residual Classifier for Class Incremental Learning
 
 This repo contains the official code of the project "Dynamic Residual Classifier for Class Incremental Learning" (ICCV2023).
 Paper link.
