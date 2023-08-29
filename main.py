@@ -23,7 +23,7 @@ def setup_parser():
     parser = argparse.ArgumentParser(description='Reproduce of multiple continual learning algorthms.')
     parser.add_argument('--config', type=str, default='./config.json',
                         help='Json file of settings.')
-    parser.add_argument('--pretrain',type=bool, default=False)
+    parser.add_argument('--test',type=bool, default=False)
     return parser
 
 

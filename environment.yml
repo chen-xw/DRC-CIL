@@ -1,4 +1,4 @@
-name: MAFDRC-test
+name: MAFDRC
 channels:
   - anaconda
   - conda-forge

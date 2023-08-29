@@ -27,7 +27,7 @@ def _train(args):
  
     logfilename = 'logs/{}/{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(args["model_name"], args['prefix'],  args['seed'], args['model_name'], args["convnet_type"],
                                                 args['dataset'], args['init_cls'], args['increment'], args["device"],
-                                                args['alpha'], args['beta1'], args['beta2'], args["tro"], args['save_path'],args["pretrain"])
+                                                args['alpha'], args['beta1'], args['beta2'], args["tro"], args['save_path'],args["test"])
         
     
 
@@ -50,7 +50,7 @@ def _train(args):
     for task in range(data_manager.nb_tasks):
         logging.info('All params: {}'.format(count_parameters(model._network)))
         logging.info('Trainable params: {}'.format(count_parameters(model._network, True)))
-        if args["pretrain"] :
+        if args["test"] :
             model.incremental_test(data_manager)
         else:
             model.incremental_train(data_manager)

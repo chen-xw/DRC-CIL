@@ -2,7 +2,7 @@
 # Dynamic Residual Classifier for Class Incremental Learning
 
 This repo contains the official code of the project "Dynamic Residual Classifier for Class Incremental Learning" (ICCV2023).
-Paper link.
+[[Paper Link]](https://arxiv.org/pdf/2308.13305.pdf), [[Supplementary]](./supp_doc/supp.pdf).
 
 ## 1.Dependent Packages and Platform
 
@@ -47,51 +47,37 @@ We have implemented the pre-processing of `CIFAR100`, `ImageNet100`, `ImageNet10
 
 ## 2.Run
 
-`To run the testing code:`
+`Testing:`
 
-Due to the limitation of the supplementary material size, we only upload the results of CIFAR100.
+<!-- We provide the results of CIFAR100. -->
 
-- Test CIFAR100
+- CIFAR100 B0 10 steps
 
     ```
     python main.py --config=mafdrc-cifar100.json --test True
     ```
 
-`To run the training code:`
+`Training:`
 
-- Train CIFAR100
+- CIFAR100 B0 10 steps
 
     ```
     python main.py --config=mafdrc-cifar100.json
     ```
 
-- Train ImageNet100
-
-    1.You first edit the `[mafdrc-imagenet100].json` file for global settings.
-
-    2.Edit the hyperparameters and model name in the corresponding `[mafdrc].py` file (e.g., `models/mafdrc.py`).
+- ImageNet100 B0 10 steps
 
     ```
     python main.py --config=mafdrc-imagenet100.json
     ```
 
-- Train ImageNet1000
-
-    1.You first edit the `[mafdrc-imagenet100].json` file for global settings.
-
-    2.Edit the hyperparameters and model name in the corresponding `[mafdrc].py` file (e.g., `models/mafdrc.py`).
+- ImageNet1000 B0 10 steps
 
     ```
     python main.py --config=mafdrc-imagenet1000.json 
     ```        
 
-## 3.Results
-
-`CIFAR100:`
-
-Tasks | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 | Avg |
-:---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-Ours (MAFDRC) | **93.4** | **83.0** | **80.9** | **76.72** | **74.18** | **71.3** | **69.17** | **65.45** | **63.49** | **62.04** | **73.97**
+Modifying "init_cls" and "increment" in mafdrc-[dataset].json for other CIL settings.
 
 
 ## 4.Citation
@@ -99,10 +85,14 @@ Ours (MAFDRC) | **93.4** | **83.0** | **80.9** | **76.72** | **74.18** | **71.3*
 If you find this code useful, please kindly cite the following paper:
 
 ```
-@article{,
+@article{drc-iccv,
   title={Dynamic Residual Classifier for Class Incremental Learning},
   author={Xiuwei Chen, Xiaobin Chang},
   booktitle = {IEEE International Conference on Computer Vision (ICCV)},
   year={2023}
 }
 ```
+
+## 5.Reference
+
+This code is built on [ECCV22-FOSTER](https://github.com/G-U-N/ECCV22-FOSTER).
