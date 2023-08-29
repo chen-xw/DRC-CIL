@@ -29,7 +29,7 @@ class Mafdrc(BaseLearner):
 
     def after_task(self):
         self._known_classes = self._total_classes
-        if self.args["pretrain"] is False:
+        if self.args["test"] is False:
             self._old_network = self._network.copy().freeze()
             save_checkpoint({
                 'state_dict': self._network.state_dict(),
@@ -224,7 +224,6 @@ class Mafdrc(BaseLearner):
 
         for param in self._snet.BHO.parameters():
             param.requires_grad = False
-        self._snet.BHO.eval()
 
         prog_bar = tqdm(range(self.args["fusion_epochs"]))
         for _, epoch in enumerate(prog_bar):
@@ -288,7 +287,6 @@ class Mafdrc(BaseLearner):
 
         for param in self._snet.BHO.parameters():
             param.requires_grad = True
-        self._snet.BHO.train()
 
         if self._cur_task > 0:
             self._network = self._snet
