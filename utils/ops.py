@@ -1,7 +1,7 @@
 from PIL import Image, ImageEnhance, ImageOps
 import random
 
-
+ 
 class ShearX(object):
     def __init__(self, fillcolor=(128, 128, 128)):
         self.fillcolor = fillcolor
